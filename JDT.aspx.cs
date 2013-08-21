@@ -765,4 +765,8 @@ public partial class _Default : System.Web.UI.Page
         Refresh_Job_Numbers();
         Refresh_Revisions();
     }
+    protected void ViewTest_Click(object sender, EventArgs e)
+    {
+        MultiView1.ActiveViewIndex = 1;
+    }
 }

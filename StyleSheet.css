@@ -130,11 +130,14 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
 
 .content {
     padding-left:20px;
+    padding-right:20px;
 }
 
 /* ~~ The footer ~~ */
 .footer {
 	padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom:10px;
 	background: #aaaa9a;
 	outline:solid;
 	outline-width:1px;

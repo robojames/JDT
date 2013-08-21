@@ -32,7 +32,7 @@
     </ul>
 <!-- End .MenuDiv -->    </div>
     
-  <div class="content">
+  <div class="content", style="padding-left:0px; padding-right: 0px; padding-top: 10px; padding-bottom:10px;">
     
       <asp:SqlDataSource ID="JDT" runat="server" ConnectionString="<%$ ConnectionStrings:jdtConnectionString %>" ProviderName="<%$ ConnectionStrings:jdtConnectionString.ProviderName %>" SelectCommand="SELECT DISTINCT testengineer.Name, job.idJob, job.ReportWritten, job.ReportInitialCheck, job.ReportFinalCheck, job.Revision, job.Comments FROM testengineer INNER JOIN job ON testengineer.idTestEngineer = job.TestEngineer_idTestEngineer WHERE job.Status='Done' ORDER BY testengineer.Name, job.idJob DESC"></asp:SqlDataSource>
       <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="idJob,Revision" DataSourceID="JDT" ForeColor="#333333" GridLines="None" Width="100%" OnRowDataBound="GridView1_RowDataBound" OnDataBound="GridView1_DataBound" >

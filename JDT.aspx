@@ -67,7 +67,10 @@
         <asp:SqlDataSource ID="TestEngineer_Data" runat="server" ConnectionString="<%$ ConnectionStrings:jdtConnectionString %>" ProviderName="<%$ ConnectionStrings:jdtConnectionString.ProviderName %>" SelectCommand="SELECT Name FROM testengineer"></asp:SqlDataSource>
         <asp:TextBox ID="TextBox_Error_Messages" runat="server" Visible="False" BorderStyle="None" CssClass="errorText" Width="100%" ReadOnly="True"></asp:TextBox>
       </h3>
-      <table>
+      <asp:Button ID="ViewTest" runat="server" Text="View 2" OnClick="ViewTest_Click" />
+      <asp:MultiView runat="server" ActiveViewIndex="0" ID="MultiView1">
+          <asp:View runat="server">
+      <table> <!-- Start of the main JDT View -->
           <tr>
               <td>
                     Select Job:&nbsp;</td>
@@ -307,27 +310,39 @@
 
           <table> <!-- Tables for the buttons -->
           <tr>
-              <td class="auto-style2">Specify Job #:&nbsp; </td>
+              <td class="auto-style2">&nbsp;</td>
               <td>
-                  <asp:TextBox ID="TextBox_NewJobNumber" runat="server"></asp:TextBox>
-              </td>
+                  &nbsp;</td>
               <td>&nbsp;</td>
               <td></td>
               <td></td>
           </tr>
               <tr>
                   <td>&nbsp;</td>
-                  <td></td>
+                  <td>
+                      &nbsp;</td>
               </tr>
               <tr>
                 <td class="auto-style2">
-                    <asp:Button ID="Button_NewJob" runat="server" Text="New Job" OnClick="Button_NewJob_Click" PostBackUrl="~/JDT.aspx" Width="125px" CssClass="TextBoxControl" />
-                </td>
+                    Specify Job #:&nbsp; </td>
                   <td>
+
+                  <asp:TextBox ID="TextBox_NewJobNumber" runat="server"></asp:TextBox>
+
+                  </td>
+                  <td>
+
+
+                    <asp:Button ID="Button_NewJob" runat="server" Text="New Job" OnClick="Button_NewJob_Click" PostBackUrl="~/JDT.aspx" Width="125px" CssClass="TextBoxControl" />
+
+                  </td>
+                  <td>
+
 
                       <asp:Button ID="Button_UpdateJob" runat="server" Text="Save Changes" OnClick="Button_UpdateJob_Click" PostBackUrl="~/JDT.aspx" Width="125px" CssClass="TextBoxControl" /> 
 
                   </td>
+
                   <td>
 
 
@@ -335,12 +350,17 @@
 
                   </td>
                   <td>
-                      <asp:Button ID="Button_Delete" runat="server" Text="Delete this Job/Revision" OnClick="Button_Delete_Click" Height="28px" />
+
+                      <asp:Button ID="Button_Delete" runat="server" Text="Delete this Job/Revision" OnClick="Button_Delete_Click" Height="28px" Width="156px" />
+
                   </td>
               </tr>
           </table>
-               </p>
-
+              </asp:View> <!-- End of JDT Main View -->
+          <asp:View runat="server"> <!-- Beginning of Equipment View for current job -->
+              Job CURRENT
+          </asp:View>
+      </asp:MultiView>
     </div>
   <div class="footer">
     <p><i>ETC JDT Demo Rev. A </i> - James L. Armes</p>
