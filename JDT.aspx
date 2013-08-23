@@ -67,7 +67,8 @@
         <asp:SqlDataSource ID="TestEngineer_Data" runat="server" ConnectionString="<%$ ConnectionStrings:jdtConnectionString %>" ProviderName="<%$ ConnectionStrings:jdtConnectionString.ProviderName %>" SelectCommand="SELECT Name FROM testengineer"></asp:SqlDataSource>
         <asp:TextBox ID="TextBox_Error_Messages" runat="server" Visible="False" BorderStyle="None" CssClass="errorText" Width="100%" ReadOnly="True"></asp:TextBox>
       </h3>
-      <asp:Button ID="ViewTest" runat="server" Text="View 2" OnClick="ViewTest_Click" />
+      <asp:Button ID="Button_Test" runat="server" OnClick="Button_Test_Click" Text="Test" />
+      <asp:Button ID="ViewTest" runat="server" Text="Equipment" OnClick="ViewTest_Click" />
       <asp:MultiView runat="server" ActiveViewIndex="0" ID="MultiView1">
           <asp:View runat="server">
       <table> <!-- Start of the main JDT View -->
@@ -308,7 +309,86 @@
 
           </table>
 
-          <table> <!-- Tables for the buttons -->
+         
+              </asp:View> <!-- End of JDT Main View -->
+          <asp:View runat="server"> <!-- Beginning of Equipment View for current job -->
+              &nbsp;<table>
+                  <tr>
+                      <td>
+                          Calipers:
+                      </td>
+                      <td>
+                          <asp:DropDownList ID="DropDownList_Calipers" runat="server" AutoPostBack="True" CssClass="TextBoxControl">
+                              <asp:ListItem>CP0007</asp:ListItem>
+                          </asp:DropDownList>
+                      </td>
+                  </tr>
+
+                  <tr>
+                      <td>
+                          Micrometer:
+                      </td>
+                      <td>
+                          <asp:DropDownList ID="DropDownList_Micrometers" runat="server" AutoPostBack="True" CssClass="TextBoxControl">
+                              <asp:ListItem>CP0007</asp:ListItem>
+                          </asp:DropDownList>
+                      </td>
+                 </tr>
+                  <tr>
+                      <td>
+                          Scale:  
+                      </td>
+                      <td>
+                          <asp:DropDownList ID="DropDownList_Scale" runat="server" AutoPostBack="True" CssClass="TextBoxControl">
+                              <asp:ListItem>CP0007</asp:ListItem>
+                          </asp:DropDownList>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>
+                          Torque Wrench: 
+                      </td>
+                      <td>
+                          <asp:DropDownList ID="DropDownList_TorqueWrench" runat="server" AutoPostBack="True" CssClass="TextBoxControl">
+                              <asp:ListItem>CP0007</asp:ListItem>
+                          </asp:DropDownList>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>
+                          Protractor:
+                      </td>
+                      <td>
+                          <asp:DropDownList ID="DropDownList_Protractor" runat="server" AutoPostBack="True" CssClass="TextBoxControl">
+                              <asp:ListItem>CP0007</asp:ListItem>
+                          </asp:DropDownList>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>
+                          Load Verify (force): 
+                      </td>
+                      <td>
+                          <asp:DropDownList ID="DropDownList_LV_Force" runat="server" AutoPostBack="True" CssClass="TextBoxControl">
+                              <asp:ListItem>CP0007</asp:ListItem>
+                          </asp:DropDownList>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>
+                          Load Verify (torque): 
+                      </td>
+                      <td>
+                          <asp:DropDownList ID="DropDownList_LV_Torque" runat="server" AutoPostBack="True" CssClass="TextBoxControl">
+                              <asp:ListItem>CP0007</asp:ListItem>
+                          </asp:DropDownList>
+                      </td>
+                  </tr>
+                    
+              </table>
+          </asp:View>
+      </asp:MultiView>
+       <table> <!-- Tables for the buttons -->
           <tr>
               <td class="auto-style2">&nbsp;</td>
               <td>
@@ -356,11 +436,6 @@
                   </td>
               </tr>
           </table>
-              </asp:View> <!-- End of JDT Main View -->
-          <asp:View runat="server"> <!-- Beginning of Equipment View for current job -->
-              Job CURRENT
-          </asp:View>
-      </asp:MultiView>
     </div>
   <div class="footer">
     <p><i>ETC JDT Demo Rev. A </i> - James L. Armes</p>

@@ -148,7 +148,7 @@ public partial class _Default : System.Web.UI.Page
         Refresh_Revisions();
 
         // Retrieve information for selected job:
-        string selectSQL = "SELECT * FROM `job` WHERE (idJob=@JobID AND Revision=@Rev)";
+        string selectSQL = "SELECT DISTINCT * FROM `job` WHERE (idJob=@JobID AND Revision=@Rev)";
 
         MySqlConnection con = new MySqlConnection(connectionString);
 
@@ -768,5 +768,9 @@ public partial class _Default : System.Web.UI.Page
     protected void ViewTest_Click(object sender, EventArgs e)
     {
         MultiView1.ActiveViewIndex = 1;
+    }
+    protected void Button_Test_Click(object sender, EventArgs e)
+    {
+        MultiView1.ActiveViewIndex = 0;
     }
 }
