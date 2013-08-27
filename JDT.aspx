@@ -319,8 +319,16 @@
                       </td>
                       <td>
                           <asp:DropDownList ID="DropDownList_Calipers" runat="server" AutoPostBack="True" CssClass="TextBoxControl">
+                              <asp:ListItem> </asp:ListItem>
                               <asp:ListItem>CP0007</asp:ListItem>
                           </asp:DropDownList>
+                      </td>
+                      <td>
+                          Calipers Date:
+                      </td>
+                      <td>
+                          <asp:TextBox ID="Calipers_Date" runat="server" AutoPostBack="True"></asp:TextBox>
+                  <ajaxToolkit:CalendarExtender ID="CalendarExtender_Calipers_Date" runat="server" TargetControlID="Calipers_Date" Format="dd-MMM-yyyy" CssClass="newtheme"></ajaxToolkit:CalendarExtender>
                       </td>
                   </tr>
 
@@ -330,8 +338,16 @@
                       </td>
                       <td>
                           <asp:DropDownList ID="DropDownList_Micrometers" runat="server" AutoPostBack="True" CssClass="TextBoxControl">
+                               <asp:ListItem> </asp:ListItem>
                               <asp:ListItem>CP0007</asp:ListItem>
                           </asp:DropDownList>
+                      </td>
+                      <td>
+                          Micrometer Date:
+                      </td>
+                      <td>
+                          <asp:TextBox ID="Micrometer_Date" runat="server" AutoPostBack="True"></asp:TextBox>
+                  <ajaxToolkit:CalendarExtender ID="CalendarExtender_MicrometerDate" runat="server" TargetControlID="Micrometer_Date" Format="dd-MMM-yyyy" CssClass="newtheme"></ajaxToolkit:CalendarExtender>
                       </td>
                  </tr>
                   <tr>
@@ -340,8 +356,16 @@
                       </td>
                       <td>
                           <asp:DropDownList ID="DropDownList_Scale" runat="server" AutoPostBack="True" CssClass="TextBoxControl">
+                               <asp:ListItem> </asp:ListItem>
                               <asp:ListItem>CP0007</asp:ListItem>
                           </asp:DropDownList>
+                      </td>
+                      <td>
+                          Scale Date:
+                      </td>
+                      <td>
+                          <asp:TextBox ID="Scale_Date" runat="server" AutoPostBack="True"></asp:TextBox>
+                  <ajaxToolkit:CalendarExtender ID="CalendarExtender_Scale_Date" runat="server" TargetControlID="Scale_Date" Format="dd-MMM-yyyy" CssClass="newtheme"></ajaxToolkit:CalendarExtender>
                       </td>
                   </tr>
                   <tr>
@@ -350,8 +374,16 @@
                       </td>
                       <td>
                           <asp:DropDownList ID="DropDownList_TorqueWrench" runat="server" AutoPostBack="True" CssClass="TextBoxControl">
+                               <asp:ListItem> </asp:ListItem>
                               <asp:ListItem>CP0007</asp:ListItem>
                           </asp:DropDownList>
+                      </td>
+                      <td>
+                          Torque Wrench Date:
+                      </td>
+                      <td>
+                          <asp:TextBox ID="TW_Date" runat="server" AutoPostBack="True"></asp:TextBox>
+                  <ajaxToolkit:CalendarExtender ID="CalendarExtender_TWDate" runat="server" TargetControlID="TW_Date" Format="dd-MMM-yyyy" CssClass="newtheme"></ajaxToolkit:CalendarExtender>
                       </td>
                   </tr>
                   <tr>
@@ -360,8 +392,16 @@
                       </td>
                       <td>
                           <asp:DropDownList ID="DropDownList_Protractor" runat="server" AutoPostBack="True" CssClass="TextBoxControl">
+                               <asp:ListItem> </asp:ListItem>
                               <asp:ListItem>CP0007</asp:ListItem>
                           </asp:DropDownList>
+                      </td>
+                      <td>
+                          Protractor Date:
+                      </td>
+                      <td>
+                          <asp:TextBox ID="Protractor_Date" runat="server" AutoPostBack="True"></asp:TextBox>
+                  <ajaxToolkit:CalendarExtender ID="CalendarExtender_ProtractorDate" runat="server" TargetControlID="Protractor_Date" Format="dd-MMM-yyyy" CssClass="newtheme"></ajaxToolkit:CalendarExtender>
                       </td>
                   </tr>
                   <tr>
@@ -370,8 +410,16 @@
                       </td>
                       <td>
                           <asp:DropDownList ID="DropDownList_LV_Force" runat="server" AutoPostBack="True" CssClass="TextBoxControl">
+                               <asp:ListItem> </asp:ListItem>
                               <asp:ListItem>CP0007</asp:ListItem>
                           </asp:DropDownList>
+                      </td>
+                      <td>
+                          Load Verify Date:
+                      </td>
+                      <td>
+                          <asp:TextBox ID="Load_Verify_Force_Date" runat="server" AutoPostBack="True"></asp:TextBox>
+                  <ajaxToolkit:CalendarExtender ID="CalendarExtender_LVForce" runat="server" TargetControlID="Load_Verify_Force_Date" Format="dd-MMM-yyyy" CssClass="newtheme"></ajaxToolkit:CalendarExtender>
                       </td>
                   </tr>
                   <tr>
@@ -380,8 +428,16 @@
                       </td>
                       <td>
                           <asp:DropDownList ID="DropDownList_LV_Torque" runat="server" AutoPostBack="True" CssClass="TextBoxControl">
+                               <asp:ListItem> </asp:ListItem>
                               <asp:ListItem>CP0007</asp:ListItem>
                           </asp:DropDownList>
+                      </td>
+                      <td>
+                          Load Verify Date:
+                      </td>
+                      <td>
+                          <asp:TextBox ID="LV_Torque_Date" runat="server" AutoPostBack="True"></asp:TextBox>
+                  <ajaxToolkit:CalendarExtender ID="CalendarExtender_LV_Torque" runat="server" TargetControlID="LV_Torque_Date" Format="dd-MMM-yyyy" CssClass="newtheme"></ajaxToolkit:CalendarExtender>
                       </td>
                   </tr>
                     
@@ -435,6 +491,11 @@
 
                   </td>
               </tr>
+           <tr>
+               <td>
+
+               </td>
+           </tr>
           </table>
     </div>
   <div class="footer">
