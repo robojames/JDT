@@ -215,11 +215,12 @@ public partial class _Default : System.Web.UI.Page
         // Actual Test End Date
         TextBox_Test_End.Text = Format_Entire_Date(reader["TestEnd"].ToString());
         Date_Text_Update(TextBox_Test_End);
+
         // Customer Contact Information
-        TextBox_Customer_Contact.Text = reader["CustomerContact"].ToString();
+        DropDownList_Customer_Contact.SelectedValue = reader["CustomerContact"].ToString();
 
         // Customer Name
-        TextBox_Customer_Name.Text = reader["CustomerName"].ToString();
+        DropDownList_Customer_Name.SelectedValue = reader["CustomerName"].ToString();
 
         // System Name
         TextBox_System_Name.Text = reader["SystemName"].ToString();
@@ -321,8 +322,8 @@ public partial class _Default : System.Web.UI.Page
                 cmd.Parameters.AddWithValue("@TestEnd", GetDateTime(TextBox_Test_End));
             }
 
-            cmd.Parameters.AddWithValue("@CustomerContact", TextBox_Customer_Contact.Text);
-            cmd.Parameters.AddWithValue("@CustomerName", TextBox_Customer_Name.Text);
+            cmd.Parameters.AddWithValue("@CustomerContact", DropDownList_Customer_Contact.SelectedValue);
+            cmd.Parameters.AddWithValue("@CustomerName", DropDownList_Customer_Name.SelectedValue);
             cmd.Parameters.AddWithValue("@SystemName", TextBox_System_Name.Text);
             cmd.Parameters.AddWithValue("@DeviceType", DropDown_DeviceType.SelectedValue);
 
@@ -371,10 +372,7 @@ public partial class _Default : System.Web.UI.Page
 
             updateCommand += " WHERE (idJob=@JobID AND Revision=@Rev)";
 
-            //
-            // Last comma removal from SQL statement not working!  See lns. 351-356.
-            //
-
+            
             cmd.Parameters.AddWithValue("@Jobid", DropDownList1.SelectedValue);
             cmd.Parameters.AddWithValue("@Rev", DropDown_Revision.SelectedValue);
 
@@ -474,8 +472,8 @@ public partial class _Default : System.Web.UI.Page
         TextBox_Target_Start.Text = "";
         TextBox_Test_Start.Text = "";
         TextBox_Test_End.Text = "";
-        TextBox_Customer_Contact.Text = "";
-        TextBox_Customer_Name.Text = "";
+        DropDownList_Customer_Contact.SelectedIndex = 0;
+        DropDownList_Customer_Name.SelectedIndex = 0;
         TextBox_System_Name.Text = "";
         DropDown_DeviceType.SelectedIndex = -1;
         DropDown_PM.SelectedIndex = 0;
@@ -702,10 +700,10 @@ public partial class _Default : System.Web.UI.Page
             TextBox_Test_End.Text = Format_Entire_Date(reader["TestEnd"].ToString());
             Date_Text_Update(TextBox_Test_End);
             // Customer Contact Information
-            TextBox_Customer_Contact.Text = reader["CustomerContact"].ToString();
+            DropDownList_Customer_Contact.SelectedValue = reader["CustomerContact"].ToString();
 
             // Customer Name
-            TextBox_Customer_Name.Text = reader["CustomerName"].ToString();
+            DropDownList_Customer_Name.SelectedValue = reader["CustomerName"].ToString();
 
             // System Name
             TextBox_System_Name.Text = reader["SystemName"].ToString();
@@ -772,5 +770,47 @@ public partial class _Default : System.Web.UI.Page
     protected void Button_Test_Click(object sender, EventArgs e)
     {
         MultiView1.ActiveViewIndex = 0;
+    }
+    protected void DropDownList_Calipers_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        DateTime current_Date = DateTime.Now;
+
+        Calipers_Date.Text = current_Date.ToString("dd-MMM-yyyy");
+    }
+    protected void DropDownList_Micrometers_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        DateTime current_Date = DateTime.Now;
+
+        Micrometer_Date.Text = current_Date.ToString("dd-MMM-yyyy");
+    }
+    protected void DropDownList_Scale_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        DateTime current_Date = DateTime.Now;
+
+        Scale_Date.Text = current_Date.ToString("dd-MMM-yyyy");
+    }
+    protected void DropDownList_TorqueWrench_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        DateTime current_Date = DateTime.Now;
+
+        TW_Date.Text = current_Date.ToString("dd-MMM-yyyy");
+    }
+    protected void DropDownList_Protractor_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        DateTime current_Date = DateTime.Now;
+
+        Protractor_Date.Text = current_Date.ToString("dd-MMM-yyyy");
+    }
+    protected void DropDownList_LV_Force_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        DateTime current_Date = DateTime.Now;
+
+        Load_Verify_Force_Date.Text = current_Date.ToString("dd-MMM-yyyy");
+    }
+    protected void DropDownList_LV_Torque_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        DateTime current_Date = DateTime.Now;
+
+        LV_Torque_Date.Text = current_Date.ToString("dd-MMM-yyyy");
     }
 }

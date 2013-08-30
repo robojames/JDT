@@ -121,7 +121,9 @@
                   <td>&nbsp;</td>
                   <td class="auto-style2">Customer Contact:  </td>
                   <td class="auto-style2">
-                      <asp:TextBox ID="TextBox_Customer_Contact" runat="server"></asp:TextBox>
+                      <asp:DropDownList ID="DropDownList_Customer_Contact" runat="server" DataSourceID="Customers" DataTextField="Customer Contact" DataValueField="Customer Contact">
+                      </asp:DropDownList>
+                      <asp:SqlDataSource ID="Customers" runat="server" ConnectionString="<%$ ConnectionStrings:jdtConnectionString %>" ProviderName="<%$ ConnectionStrings:jdtConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [customer]"></asp:SqlDataSource>
                   </td>
                   
               </tr>
@@ -134,7 +136,8 @@
                   <td class="auto-style1"></td>
                   <td class="auto-style2">Customer Name:  </td>
                   <td class="auto-style2">
-                      <asp:TextBox ID="TextBox_Customer_Name" runat="server"></asp:TextBox>
+                      <asp:DropDownList ID="DropDownList_Customer_Name" runat="server" DataSourceID="Customers" DataTextField="Company Name" DataValueField="Company Name">
+                      </asp:DropDownList>
                   </td>
               </tr>
               <tr>
@@ -318,7 +321,7 @@
                           Calipers:
                       </td>
                       <td>
-                          <asp:DropDownList ID="DropDownList_Calipers" runat="server" AutoPostBack="True" CssClass="TextBoxControl">
+                          <asp:DropDownList ID="DropDownList_Calipers" runat="server" AutoPostBack="True" CssClass="TextBoxControl" OnSelectedIndexChanged="DropDownList_Calipers_SelectedIndexChanged">
                               <asp:ListItem> </asp:ListItem>
                               <asp:ListItem>CP0007</asp:ListItem>
                           </asp:DropDownList>
@@ -337,7 +340,7 @@
                           Micrometer:
                       </td>
                       <td>
-                          <asp:DropDownList ID="DropDownList_Micrometers" runat="server" AutoPostBack="True" CssClass="TextBoxControl">
+                          <asp:DropDownList ID="DropDownList_Micrometers" runat="server" AutoPostBack="True" CssClass="TextBoxControl" OnSelectedIndexChanged="DropDownList_Micrometers_SelectedIndexChanged">
                                <asp:ListItem> </asp:ListItem>
                               <asp:ListItem>CP0007</asp:ListItem>
                           </asp:DropDownList>
@@ -355,7 +358,7 @@
                           Scale:  
                       </td>
                       <td>
-                          <asp:DropDownList ID="DropDownList_Scale" runat="server" AutoPostBack="True" CssClass="TextBoxControl">
+                          <asp:DropDownList ID="DropDownList_Scale" runat="server" AutoPostBack="True" CssClass="TextBoxControl" OnSelectedIndexChanged="DropDownList_Scale_SelectedIndexChanged">
                                <asp:ListItem> </asp:ListItem>
                               <asp:ListItem>CP0007</asp:ListItem>
                           </asp:DropDownList>
@@ -373,7 +376,7 @@
                           Torque Wrench: 
                       </td>
                       <td>
-                          <asp:DropDownList ID="DropDownList_TorqueWrench" runat="server" AutoPostBack="True" CssClass="TextBoxControl">
+                          <asp:DropDownList ID="DropDownList_TorqueWrench" runat="server" AutoPostBack="True" CssClass="TextBoxControl" OnSelectedIndexChanged="DropDownList_TorqueWrench_SelectedIndexChanged">
                                <asp:ListItem> </asp:ListItem>
                               <asp:ListItem>CP0007</asp:ListItem>
                           </asp:DropDownList>
@@ -391,7 +394,7 @@
                           Protractor:
                       </td>
                       <td>
-                          <asp:DropDownList ID="DropDownList_Protractor" runat="server" AutoPostBack="True" CssClass="TextBoxControl">
+                          <asp:DropDownList ID="DropDownList_Protractor" runat="server" AutoPostBack="True" CssClass="TextBoxControl" OnSelectedIndexChanged="DropDownList_Protractor_SelectedIndexChanged">
                                <asp:ListItem> </asp:ListItem>
                               <asp:ListItem>CP0007</asp:ListItem>
                           </asp:DropDownList>
@@ -409,7 +412,7 @@
                           Load Verify (force): 
                       </td>
                       <td>
-                          <asp:DropDownList ID="DropDownList_LV_Force" runat="server" AutoPostBack="True" CssClass="TextBoxControl">
+                          <asp:DropDownList ID="DropDownList_LV_Force" runat="server" AutoPostBack="True" CssClass="TextBoxControl" OnSelectedIndexChanged="DropDownList_LV_Force_SelectedIndexChanged">
                                <asp:ListItem> </asp:ListItem>
                               <asp:ListItem>CP0007</asp:ListItem>
                           </asp:DropDownList>
@@ -427,7 +430,7 @@
                           Load Verify (torque): 
                       </td>
                       <td>
-                          <asp:DropDownList ID="DropDownList_LV_Torque" runat="server" AutoPostBack="True" CssClass="TextBoxControl">
+                          <asp:DropDownList ID="DropDownList_LV_Torque" runat="server" AutoPostBack="True" CssClass="TextBoxControl" OnSelectedIndexChanged="DropDownList_LV_Torque_SelectedIndexChanged">
                                <asp:ListItem> </asp:ListItem>
                               <asp:ListItem>CP0007</asp:ListItem>
                           </asp:DropDownList>
