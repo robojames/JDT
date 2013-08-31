@@ -217,7 +217,14 @@ public partial class _Default : System.Web.UI.Page
         Date_Text_Update(TextBox_Test_End);
 
         // Customer Contact Information
-        DropDownList_Customer_Contact.SelectedValue = reader["CustomerContact"].ToString();
+        try
+        {
+            DropDownList_Customer_Contact.SelectedValue = reader["CustomerContact"].ToString();
+        }
+        catch
+        {
+            DropDownList_Customer_Contact.SelectedIndex = 0;
+        }
 
         // Customer Name
         DropDownList_Customer_Name.SelectedValue = reader["CustomerName"].ToString();
@@ -352,6 +359,99 @@ public partial class _Default : System.Web.UI.Page
             }
 
             cmd.Parameters.AddWithValue("@Comments", TextBox_Comments.Text);
+            //
+            //
+            // Adding Equipment Details
+            //
+            //
+            if (DropDownList_Calipers.SelectedIndex != 0)
+            {
+                updateCommand += "Calipers=@Calipers,";
+                cmd.Parameters.AddWithValue("@Calipers", DropDownList_Calipers.SelectedValue);
+            }
+
+            if (Calipers_Date.Text != "")
+            {
+                updateCommand += "Caliper_Date=@CaliperDate,";
+                cmd.Parameters.AddWithValue("@CaliperDate", GetDateTime(Calipers_Date));
+            }
+
+            if (DropDownList_Micrometers.SelectedIndex != 0)
+            {
+                updateCommand += "Micrometers=@Micrometers,";
+                cmd.Parameters.AddWithValue("@Micrometers", DropDownList_Micrometers.SelectedValue);
+            }
+
+            if (Micrometer_Date.Text != "")
+            {
+                updateCommand += "Micrometer_Date=@MicrometerDate,";
+                cmd.Parameters.AddWithValue("@MicrometerDate", GetDateTime(Micrometer_Date));
+            }
+
+            if (DropDownList_Scale.SelectedIndex != 0)
+            {
+                updateCommand += "Scale=@Scale,";
+                cmd.Parameters.AddWithValue("@Scale", DropDownList_Scale.SelectedValue);
+            }
+
+            if (Scale_Date.Text != "")
+            {
+                updateCommand += "Scale_Date=@Scale_Date,";
+                cmd.Parameters.AddWithValue("@Scale_Date", GetDateTime(Scale_Date));
+            }
+
+            if (DropDownList_TorqueWrench.SelectedIndex != 0)
+            {
+                updateCommand += "TW=@TW,";
+                cmd.Parameters.AddWithValue("@TW", DropDownList_TorqueWrench.SelectedValue);
+            }
+
+            if (TW_Date.Text != "")
+            {
+                updateCommand += "TW_Date=@TWDate,";
+                cmd.Parameters.AddWithValue("@TWDate", GetDateTime(TW_Date));
+            }
+
+            if (DropDownList_Protractor.SelectedIndex != 0)
+            {
+                updateCommand += "Protractor=@Protractor,";
+                cmd.Parameters.AddWithValue("@Protractor", DropDownList_Protractor.SelectedValue);
+            }
+
+            if (Protractor_Date.Text != "")
+            {
+                updateCommand += "Protractor_Date=@ProDate,";
+                cmd.Parameters.AddWithValue("@ProDate", GetDateTime(Protractor_Date));
+            }
+
+            if (DropDownList_LV_Force.SelectedIndex != 0)
+            {
+                updateCommand += "LV_Force=@LV_Force,";
+                cmd.Parameters.AddWithValue("@LV_Force", DropDownList_LV_Force.SelectedValue);
+            }
+
+            if (Load_Verify_Force_Date.Text != "")
+            {
+                updateCommand += "LV_Force_Date=@LV_Force_Date,";
+                cmd.Parameters.AddWithValue("@LV_Force_Date", GetDateTime(Load_Verify_Force_Date));
+            }
+
+            if (DropDownList_LV_Torque.SelectedIndex != 0)
+            {
+                updateCommand += "LV_Torque=@LV_Torque,";
+                cmd.Parameters.AddWithValue("@LV_Torque", DropDownList_LV_Torque.SelectedValue);
+            }
+
+            if (LV_Torque_Date.Text != "")
+            {
+                updateCommand += "LV_Torque_Date=@LV_Torque_Date,";
+                cmd.Parameters.AddWithValue("@LV_Torque_Date", GetDateTime(LV_Torque_Date));
+            }
+            //
+            //
+            // End of equipment details
+            //
+            //
 
             Debug.WriteLine("Update Substring Prior:  " + updateCommand);
 
@@ -367,6 +467,8 @@ public partial class _Default : System.Web.UI.Page
             {
                 updateCommand = updateCommand.Substring(0, updateCommand.Length - 1);
             }
+
+           
 
             Debug.WriteLine("Update Substring After:  " + updateCommand);
 
@@ -402,6 +504,7 @@ public partial class _Default : System.Web.UI.Page
         // Monitor this IF statement
         if (DateTimeTextBox.Text.Length < 4)
         {
+            Debug.WriteLine("Returned: " + DateTimeTextBox.Text);
             return DateTimeTextBox.Text;
         }
         else
@@ -454,6 +557,7 @@ public partial class _Default : System.Web.UI.Page
 
             string date = year + "-" + month_Int + "-" + day;
 
+            Debug.WriteLine("Returned: " + date.ToString());
             return date;
         }
     }
@@ -775,42 +879,42 @@ public partial class _Default : System.Web.UI.Page
     {
         DateTime current_Date = DateTime.Now;
 
-        Calipers_Date.Text = current_Date.ToString("dd-MMM-yyyy");
+        Calipers_Date.Text = current_Date.ToString("dd-MMM-yy");
     }
     protected void DropDownList_Micrometers_SelectedIndexChanged(object sender, EventArgs e)
     {
         DateTime current_Date = DateTime.Now;
 
-        Micrometer_Date.Text = current_Date.ToString("dd-MMM-yyyy");
+        Micrometer_Date.Text = current_Date.ToString("dd-MMM-yy");
     }
     protected void DropDownList_Scale_SelectedIndexChanged(object sender, EventArgs e)
     {
         DateTime current_Date = DateTime.Now;
 
-        Scale_Date.Text = current_Date.ToString("dd-MMM-yyyy");
+        Scale_Date.Text = current_Date.ToString("dd-MMM-yy");
     }
     protected void DropDownList_TorqueWrench_SelectedIndexChanged(object sender, EventArgs e)
     {
         DateTime current_Date = DateTime.Now;
 
-        TW_Date.Text = current_Date.ToString("dd-MMM-yyyy");
+        TW_Date.Text = current_Date.ToString("dd-MMM-yy");
     }
     protected void DropDownList_Protractor_SelectedIndexChanged(object sender, EventArgs e)
     {
         DateTime current_Date = DateTime.Now;
 
-        Protractor_Date.Text = current_Date.ToString("dd-MMM-yyyy");
+        Protractor_Date.Text = current_Date.ToString("dd-MMM-yy");
     }
     protected void DropDownList_LV_Force_SelectedIndexChanged(object sender, EventArgs e)
     {
         DateTime current_Date = DateTime.Now;
 
-        Load_Verify_Force_Date.Text = current_Date.ToString("dd-MMM-yyyy");
+        Load_Verify_Force_Date.Text = current_Date.ToString("dd-MMM-yy");
     }
     protected void DropDownList_LV_Torque_SelectedIndexChanged(object sender, EventArgs e)
     {
         DateTime current_Date = DateTime.Now;
 
-        LV_Torque_Date.Text = current_Date.ToString("dd-MMM-yyyy");
+        LV_Torque_Date.Text = current_Date.ToString("dd-MMM-yy");
     }
 }

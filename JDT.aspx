@@ -121,14 +121,14 @@
                   <td>&nbsp;</td>
                   <td class="auto-style2">Customer Contact:  </td>
                   <td class="auto-style2">
-                      <asp:DropDownList ID="DropDownList_Customer_Contact" runat="server" DataSourceID="Customers" DataTextField="Customer Contact" DataValueField="Customer Contact">
+                      <asp:DropDownList ID="DropDownList_Customer_Contact" runat="server" DataSourceID="Customers" DataTextField="CustomerContact" DataValueField="CustomerContact">
                       </asp:DropDownList>
                       <asp:SqlDataSource ID="Customers" runat="server" ConnectionString="<%$ ConnectionStrings:jdtConnectionString %>" ProviderName="<%$ ConnectionStrings:jdtConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [customer]"></asp:SqlDataSource>
                   </td>
                   
               </tr>
               <tr> <!-- Second row of Dta -->
-                  <ajaxToolkit:CalendarExtender ID="Calendar_DeliveryDate" runat="server" TargetControlID="TextBox_DeliveryDate" Format="dd-MMM-yyyy" CssClass="newtheme"></ajaxToolkit:CalendarExtender>
+                  <ajaxToolkit:CalendarExtender ID="Calendar_DeliveryDate" runat="server" TargetControlID="TextBox_DeliveryDate" Format="dd-MMM-yy" CssClass="newtheme"></ajaxToolkit:CalendarExtender>
                   
                   <td class="auto-style1">Delivery Dates:</td>
                   <td>
@@ -136,7 +136,7 @@
                   <td class="auto-style1"></td>
                   <td class="auto-style2">Customer Name:  </td>
                   <td class="auto-style2">
-                      <asp:DropDownList ID="DropDownList_Customer_Name" runat="server" DataSourceID="Customers" DataTextField="Company Name" DataValueField="Company Name">
+                      <asp:DropDownList ID="DropDownList_Customer_Name" runat="server" DataSourceID="Customers" DataTextField="CompanyName" DataValueField="CompanyName">
                       </asp:DropDownList>
                   </td>
               </tr>
@@ -231,7 +231,7 @@
               <td>PO Date:</td>
               <td>
                       <asp:TextBox ID="TextBox_PODate" runat="server" AutoPostBack="True"></asp:TextBox>
-                  <ajaxToolkit:CalendarExtender ID="Calendar_PODate" runat="server" TargetControlID="TextBox_PODate" Format="dd-MMM-yyyy" CssClass="newtheme"></ajaxToolkit:CalendarExtender>
+                  <ajaxToolkit:CalendarExtender ID="Calendar_PODate" runat="server" TargetControlID="TextBox_PODate" Format="dd-MMM-yy" CssClass="newtheme"></ajaxToolkit:CalendarExtender>
                   </td>
               <td></td>
               <td class="auto-style2">Test Engineer:</td>
@@ -245,13 +245,13 @@
               <td>Folder Build:</td>
               <td>
                       <asp:TextBox ID="TextBox_FBuild" runat="server" AutoPostBack="True"></asp:TextBox>
-                  <ajaxToolkit:CalendarExtender ID="Calendar_FBuild" runat="server" TargetControlID="TextBox_FBuild" Format="dd-MMM-yyyy" CssClass="newtheme"></ajaxToolkit:CalendarExtender>
+                  <ajaxToolkit:CalendarExtender ID="Calendar_FBuild" runat="server" TargetControlID="TextBox_FBuild" Format="dd-MMM-yy" CssClass="newtheme"></ajaxToolkit:CalendarExtender>
                   </td>
               <td></td>
               <td class="auto-style2">Report Written</td>
               <td class="auto-style2">
                       <asp:TextBox ID="TextBox_ReportWritten" runat="server" AutoPostBack="True"></asp:TextBox>
-                  <ajaxToolkit:CalendarExtender ID="Calendar_Report_Written" runat="server" TargetControlID="TextBox_ReportWritten" Format="dd-MMM-yyyy" CssClass="newtheme"></ajaxToolkit:CalendarExtender>
+                  <ajaxToolkit:CalendarExtender ID="Calendar_Report_Written" runat="server" TargetControlID="TextBox_ReportWritten" Format="dd-MMM-yy" CssClass="newtheme"></ajaxToolkit:CalendarExtender>
                   </td>
           </tr>
 
@@ -259,13 +259,13 @@
               <td>Folder Check:</td>
               <td>
                       <asp:TextBox ID="TextBox_FCheck" runat="server" AutoPostBack="True"></asp:TextBox>
-                  <ajaxToolkit:CalendarExtender ID="Calendar_FCheck" runat="server" TargetControlID="TextBox_FCheck" Format="dd-MMM-yyyy" CssClass="newtheme"></ajaxToolkit:CalendarExtender>
+                  <ajaxToolkit:CalendarExtender ID="Calendar_FCheck" runat="server" TargetControlID="TextBox_FCheck" Format="dd-MMM-yy" CssClass="newtheme"></ajaxToolkit:CalendarExtender>
                   </td>
               <td></td>
               <td class="auto-style2">Report Initial Check:  </td>
               <td class="auto-style2">
                   <asp:TextBox ID="TextBox_Initial_Report_Check" runat="server" AutoPostBack="True"></asp:TextBox>
-                  <ajaxToolkit:CalendarExtender ID="Calendar_Initial_Report_Check" runat="server" TargetControlID="TextBox_Initial_Report_Check" Format="dd-MMM-yyyy" CssClass="newtheme"></ajaxToolkit:CalendarExtender>
+                  <ajaxToolkit:CalendarExtender ID="Calendar_Initial_Report_Check" runat="server" TargetControlID="TextBox_Initial_Report_Check" Format="dd-MMM-yy" CssClass="newtheme"></ajaxToolkit:CalendarExtender>
               </td>
           </tr>
 
@@ -273,13 +273,13 @@
               <td class="auto-style3">Target Start:</td>
               <td class="auto-style3">
                       <asp:TextBox ID="TextBox_Target_Start" runat="server" AutoPostBack="True"></asp:TextBox>
-                  <ajaxToolkit:CalendarExtender ID="Calendar_Target_Start" runat="server" TargetControlID="TextBox_Target_Start" Format="dd-MMM-yyyy" CssClass="newtheme"></ajaxToolkit:CalendarExtender>
+                  <ajaxToolkit:CalendarExtender ID="Calendar_Target_Start" runat="server" TargetControlID="TextBox_Target_Start" Format="dd-MMM-yy" CssClass="newtheme"></ajaxToolkit:CalendarExtender>
                   </td>
               <td class="auto-style3"></td>
               <td class="auto-style5">Report Final Check:  </td>
               <td class="auto-style5">
                   <asp:TextBox ID="TextBox_Final_Report_Check" runat="server" AutoPostBack="True"></asp:TextBox>
-                  <ajaxToolkit:CalendarExtender ID="Calendar_Final_Report_Check" runat="server" TargetControlID="TextBox_Final_Report_Check" Format="dd-MMM-yyyy" CssClass="newtheme"></ajaxToolkit:CalendarExtender>
+                  <ajaxToolkit:CalendarExtender ID="Calendar_Final_Report_Check" runat="server" TargetControlID="TextBox_Final_Report_Check" Format="dd-MMM-yy" CssClass="newtheme"></ajaxToolkit:CalendarExtender>
               </td>
           </tr>
 
@@ -287,13 +287,13 @@
               <td class="auto-style3">Test Start:</td>
               <td class="auto-style3">
                       <asp:TextBox ID="TextBox_Test_Start" runat="server" AutoPostBack="True"></asp:TextBox>
-                  <ajaxToolkit:CalendarExtender ID="Calendar_Test_Start" runat="server" TargetControlID="TextBox_Test_Start" Format="dd-MMM-yyyy" CssClass="newtheme"></ajaxToolkit:CalendarExtender>
+                  <ajaxToolkit:CalendarExtender ID="Calendar_Test_Start" runat="server" TargetControlID="TextBox_Test_Start" Format="dd-MMM-yy" CssClass="newtheme"></ajaxToolkit:CalendarExtender>
                   </td>
               <td class="auto-style3"></td>
               <td class="auto-style5">Invoiced Date:  </td>
               <td class="auto-style5">
                       <asp:TextBox ID="TextBox_InvoiceDate" runat="server" AutoPostBack="True"></asp:TextBox>
-                  <ajaxToolkit:CalendarExtender ID="Calendar_Invoice_Date" runat="server" TargetControlID="TextBox_InvoiceDate" Format="dd-MMM-yyyy" CssClass="newtheme"></ajaxToolkit:CalendarExtender>
+                  <ajaxToolkit:CalendarExtender ID="Calendar_Invoice_Date" runat="server" TargetControlID="TextBox_InvoiceDate" Format="dd-MMM-yy" CssClass="newtheme"></ajaxToolkit:CalendarExtender>
                   </td>
           </tr>
 
@@ -301,7 +301,7 @@
               <td>Test End:</td>
               <td>
                       <asp:TextBox ID="TextBox_Test_End" runat="server" AutoPostBack="True"></asp:TextBox>
-                  <ajaxToolkit:CalendarExtender ID="Calendar_Test_End" runat="server" TargetControlID="TextBox_Test_End" Format="dd-MMM-yyyy" CssClass="newtheme"></ajaxToolkit:CalendarExtender>
+                  <ajaxToolkit:CalendarExtender ID="Calendar_Test_End" runat="server" TargetControlID="TextBox_Test_End" Format="dd-MMM-yy" CssClass="newtheme"></ajaxToolkit:CalendarExtender>
                   </td>
               <td></td>
               <td class="auto-style2">Comments:  </td>
@@ -315,7 +315,18 @@
          
               </asp:View> <!-- End of JDT Main View -->
           <asp:View runat="server"> <!-- Beginning of Equipment View for current job -->
+              <table>
+                  <tr>
+                      <td>
+                          Current Job:
+                      </td>
+                      <td>
+                          <%: DropDownList1.SelectedValue %>
+                      </td>
+                  </tr>
+              </table>
               &nbsp;<table>
+                  
                   <tr>
                       <td>
                           Calipers:
@@ -331,7 +342,7 @@
                       </td>
                       <td>
                           <asp:TextBox ID="Calipers_Date" runat="server" AutoPostBack="True"></asp:TextBox>
-                  <ajaxToolkit:CalendarExtender ID="CalendarExtender_Calipers_Date" runat="server" TargetControlID="Calipers_Date" Format="dd-MMM-yyyy" CssClass="newtheme"></ajaxToolkit:CalendarExtender>
+                  <ajaxToolkit:CalendarExtender ID="CalendarExtender_Calipers_Date" runat="server" TargetControlID="Calipers_Date" Format="dd-MMM-yy" CssClass="newtheme"></ajaxToolkit:CalendarExtender>
                       </td>
                   </tr>
 
@@ -350,7 +361,7 @@
                       </td>
                       <td>
                           <asp:TextBox ID="Micrometer_Date" runat="server" AutoPostBack="True"></asp:TextBox>
-                  <ajaxToolkit:CalendarExtender ID="CalendarExtender_MicrometerDate" runat="server" TargetControlID="Micrometer_Date" Format="dd-MMM-yyyy" CssClass="newtheme"></ajaxToolkit:CalendarExtender>
+                  <ajaxToolkit:CalendarExtender ID="CalendarExtender_MicrometerDate" runat="server" TargetControlID="Micrometer_Date" Format="dd-MMM-yy" CssClass="newtheme"></ajaxToolkit:CalendarExtender>
                       </td>
                  </tr>
                   <tr>
@@ -368,7 +379,7 @@
                       </td>
                       <td>
                           <asp:TextBox ID="Scale_Date" runat="server" AutoPostBack="True"></asp:TextBox>
-                  <ajaxToolkit:CalendarExtender ID="CalendarExtender_Scale_Date" runat="server" TargetControlID="Scale_Date" Format="dd-MMM-yyyy" CssClass="newtheme"></ajaxToolkit:CalendarExtender>
+                  <ajaxToolkit:CalendarExtender ID="CalendarExtender_Scale_Date" runat="server" TargetControlID="Scale_Date" Format="dd-MMM-yy" CssClass="newtheme"></ajaxToolkit:CalendarExtender>
                       </td>
                   </tr>
                   <tr>
@@ -386,7 +397,7 @@
                       </td>
                       <td>
                           <asp:TextBox ID="TW_Date" runat="server" AutoPostBack="True"></asp:TextBox>
-                  <ajaxToolkit:CalendarExtender ID="CalendarExtender_TWDate" runat="server" TargetControlID="TW_Date" Format="dd-MMM-yyyy" CssClass="newtheme"></ajaxToolkit:CalendarExtender>
+                  <ajaxToolkit:CalendarExtender ID="CalendarExtender_TWDate" runat="server" TargetControlID="TW_Date" Format="dd-MMM-yy" CssClass="newtheme"></ajaxToolkit:CalendarExtender>
                       </td>
                   </tr>
                   <tr>
@@ -404,7 +415,7 @@
                       </td>
                       <td>
                           <asp:TextBox ID="Protractor_Date" runat="server" AutoPostBack="True"></asp:TextBox>
-                  <ajaxToolkit:CalendarExtender ID="CalendarExtender_ProtractorDate" runat="server" TargetControlID="Protractor_Date" Format="dd-MMM-yyyy" CssClass="newtheme"></ajaxToolkit:CalendarExtender>
+                  <ajaxToolkit:CalendarExtender ID="CalendarExtender_ProtractorDate" runat="server" TargetControlID="Protractor_Date" Format="dd-MMM-yy" CssClass="newtheme"></ajaxToolkit:CalendarExtender>
                       </td>
                   </tr>
                   <tr>
@@ -422,7 +433,7 @@
                       </td>
                       <td>
                           <asp:TextBox ID="Load_Verify_Force_Date" runat="server" AutoPostBack="True"></asp:TextBox>
-                  <ajaxToolkit:CalendarExtender ID="CalendarExtender_LVForce" runat="server" TargetControlID="Load_Verify_Force_Date" Format="dd-MMM-yyyy" CssClass="newtheme"></ajaxToolkit:CalendarExtender>
+                  <ajaxToolkit:CalendarExtender ID="CalendarExtender_LVForce" runat="server" TargetControlID="Load_Verify_Force_Date" Format="dd-MMM-yy" CssClass="newtheme"></ajaxToolkit:CalendarExtender>
                       </td>
                   </tr>
                   <tr>
@@ -440,7 +451,7 @@
                       </td>
                       <td>
                           <asp:TextBox ID="LV_Torque_Date" runat="server" AutoPostBack="True"></asp:TextBox>
-                  <ajaxToolkit:CalendarExtender ID="CalendarExtender_LV_Torque" runat="server" TargetControlID="LV_Torque_Date" Format="dd-MMM-yyyy" CssClass="newtheme"></ajaxToolkit:CalendarExtender>
+                  <ajaxToolkit:CalendarExtender ID="CalendarExtender_LV_Torque" runat="server" TargetControlID="LV_Torque_Date" Format="dd-MMM-yy" CssClass="newtheme"></ajaxToolkit:CalendarExtender>
                       </td>
                   </tr>
                     
